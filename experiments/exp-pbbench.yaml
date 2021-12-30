@@ -1,0 +1,17 @@
+apiVersion: kobe.semagrow.org/v1alpha1
+kind: Experiment
+metadata:
+  name: exp-pbbench
+spec:
+  benchmark: pbbench
+  federatorName: semagrow-pb
+  federatorTemplateRef: semagrowpbtemplate
+  evaluator:
+    image: semagrow/kobe-sequential-evaluator
+    env:
+     - name: TIMEOUT
+       value: "600000"
+  timesToRun: 3
+  dryRun: false
+  forceNewInit: false 
+

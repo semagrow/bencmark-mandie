@@ -1,0 +1,707 @@
+apiVersion: kobe.semagrow.org/v1alpha1
+kind: Benchmark
+metadata:
+  name: pbbench
+spec:
+  datasets:
+    - name: empty
+      files:
+        - url: https://users.iit.demokritos.gr/~antru/dumps/empty.tar.gz
+      templateRef: strabontemplate
+  queries:
+    - name: PBQ00
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 77.94970848221368, 0.0 77.94970848221368, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ01
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 77.94970848221368, 0.0 77.94970848221368, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ02
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 78.0913058119689 0.0, 78.0913058119689 67.60809780677805, 0.0 67.60809780677805, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ03
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 78.0913058119689 0.0, 78.0913058119689 67.60809780677805, 0.0 67.60809780677805, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ04
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 63.86691556806645 0.0, 63.86691556806645 55.28941450221502, 0.0 55.28941450221502, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ05
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 63.86691556806645 0.0, 63.86691556806645 55.28941450221502, 0.0 55.28941450221502, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ06
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 45.07667166562743 0.0, 45.07667166562743 39.01658593939718, 0.0 39.01658593939718, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ07
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 45.07667166562743 0.0, 45.07667166562743 39.01658593939718, 0.0 39.01658593939718, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ08
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 28.569354592456698 0.0, 28.569354592456698 24.72083000570674, 0.0 24.72083000570674, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ09
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 28.569354592456698 0.0, 28.569354592456698 24.72083000570674, 0.0 24.72083000570674, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ10
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 3.105939958310361 0.0, 3.105939958310361 2.668866065439579, 0.0 2.668866065439579, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ11
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 3.105939958310361 0.0, 3.105939958310361 2.668866065439579, 0.0 2.668866065439579, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ12
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ13
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ14
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 67.53276922660304 0.0, 67.53276922660304 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ15
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 67.53276922660304 0.0, 67.53276922660304 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ16
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 45.032769226603044 0.0, 45.032769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ17
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 45.032769226603044 0.0, 45.032769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ18
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 22.532769226603044 0.0, 22.532769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ19
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 22.532769226603044 0.0, 22.532769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ20
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 8.997613111238904 0.0, 8.997613111238904 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ21
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 8.997613111238904 0.0, 8.997613111238904 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ22
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 0.032769571270841485 0.0, 0.032769571270841485 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ23
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 0.032769571270841485 0.0, 0.032769571270841485 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+      }'
+    - name: PBQ24
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .
+      
+      ?s2 rdf:type gg:State .  
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" .  
+      
+      FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+      }'
+    - name: PBQ25
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" . 
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+      }'
+    - name: PBQ26
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" .  
+      
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      
+      FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+      }'
+    - name: PBQ27
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:LandOwnership .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+      }'
+    - name: PBQ28
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:State .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" .  
+
+      FILTER(geof:sfTouches(?geo1, ?geo2)) .
+      }'
+    - name: PBQ29
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:State .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .  
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfTouches(?geo1, ?geo2)) .
+      }'
+    - name: PBQ30
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" . 
+      
+      ?s1 rdf:type gg:State .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      
+      FILTER(geof:sfTouches(?geo1, ?geo2)) .
+      }'
+    - name: PBQ31
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:State .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfTouches(?geo1, ?geo2)) .
+      }'
+    - name: PBQ32
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" .
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" .  
+      
+      FILTER(geof:sfWithin(?geo1, ?geo2)) .
+      }'
+    - name: PBQ33
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "1" . 
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfWithin(?geo1, ?geo2)) .
+      }'
+    - name: PBQ34
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "1" .  
+      
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      
+      FILTER(geof:sfWithin(?geo1, ?geo2)) .
+      }'
+    - name: PBQ35
+      language: sparql
+      queryString: '
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+      PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+      PREFIX gg: <http://geographica.di.uoa.gr/ontology/>
+
+      SELECT ?s1 ?s2 
+      WHERE {
+      ?s1 rdf:type gg:PointOfInterest .
+      ?s1 geo:hasGeometry ?s1Geo . 
+      ?s1Geo geo:asWKT ?geo1 . 
+      ?s1 gg:hasTag ?tag1 . 
+      ?tag1 gg:hasKey "512" .  
+      
+      ?s2 rdf:type gg:State .
+      ?s2 geo:hasGeometry ?s2Geo . 
+      ?s2Geo geo:asWKT ?geo2 . 
+      ?s2 gg:hasTag ?tag2 . 
+      ?tag2 gg:hasKey "512" .  
+      
+      FILTER(geof:sfWithin(?geo1, ?geo2)) .
+      }'

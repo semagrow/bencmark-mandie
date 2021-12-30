@@ -1,0 +1,90 @@
+apiVersion: kobe.semagrow.org/v1alpha1
+kind: Benchmark
+metadata:
+  name: pbbench6
+spec:
+  datasets:
+    - name: pbd60
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.60.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd61
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.61.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd62
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.62.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd63
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.63.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd64
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.64.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd65
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.65.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd66
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.66.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd67
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.67.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd68
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.68.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+    - name: pbd69
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.69.tar.gz
+      templateRef: strabontemplate
+      federatorConnection:
+         delayInjection:
+           fixedDelaySec: 60
+           percentage: 100
+  queries:
+    - name: dummy
+      language: sparql
+      queryString: ""

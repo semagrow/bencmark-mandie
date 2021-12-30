@@ -1,0 +1,50 @@
+apiVersion: kobe.semagrow.org/v1alpha1
+kind: Benchmark
+metadata:
+  name: pbbench6
+spec:
+  datasets:
+    - name: pbd60
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.60.tar.gz
+      templateRef: strabontemplate
+    - name: pbd61
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.61.tar.gz
+      templateRef: strabontemplate
+    - name: pbd62
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.62.tar.gz
+      templateRef: strabontemplate
+    - name: pbd63
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.63.tar.gz
+      templateRef: strabontemplate
+    - name: pbd64
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.64.tar.gz
+      templateRef: strabontemplate
+    - name: pbd65
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.65.tar.gz
+      templateRef: strabontemplate
+    - name: pbd66
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.66.tar.gz
+      templateRef: strabontemplate
+    - name: pbd67
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.67.tar.gz
+      templateRef: strabontemplate
+    - name: pbd68
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.68.tar.gz
+      templateRef: strabontemplate
+    - name: pbd69
+      files:
+        - url: http://rdf.iit.demokritos.gr/dumps/pb/pbdataset.69.tar.gz
+      templateRef: strabontemplate
+  queries:
+    - name: dummy
+      language: sparql
+      queryString: ""
