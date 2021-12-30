@@ -1,0 +1,41 @@
+1. Download and extract the synthetic dataset:
+   (URL: http://geographica.di.uoa.gr/datasets/generator_512.tar.xz)
+
+2. Run ./scripts/init-data.sh to split the generator_512.nt file into
+   3 parts: (state.nt, landOwnership.nt, and pointOfInterest.nt)
+
+3. Run ./scripts/generate-wkt-dir.sh to generate 100 txt files, each
+   file contains one dataset border in WKT.
+   
+4. Run ./scripts/generate-metadata-ttl.sh to generate the metadata.ttl
+   for the federation.
+   
+   Already calculated cardinalities for metadata.ttl:
+   
+   triples 3876636
+   properties 6
+   classes 4
+   entities 1107456
+   distinctSubjects 1660644
+   distinctObjects 1660652
+
+   property triples distinctSubjects distinctObjects
+   
+   <http://geographica.di.uoa.gr/ontology/hasKey> 554268 554268 2
+   <http://geographica.di.uoa.gr/ontology/hasTag> 553188 554268 554268
+   <http://geographica.di.uoa.gr/ontology/hasValue> 554268 554268 2
+   <http://www.opengis.net/ont/geosparql#asWKT> 553188 553188 553188
+   <http://www.opengis.net/ont/geosparql#hasGeometry> 553188 553188 553188
+   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> 1107456 1107456 4
+
+5. Split datasets by running the following class
+   org.semagrow.geotools.partition.GsynthDatasetPartitioner.GsynthPBMain
+   (cf. https://github.com/semagrow/semagrow-geotools)
+
+6. Run ./scripts/add-512-tag.sh to add one extra 512 tag.
+
+7. Run ./scripts/finalize-data.sh to get the final tar.gz files.
+
+
+
+
